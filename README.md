@@ -16,7 +16,7 @@ bricktools contains a function called check_brick which checks whether or not a 
 The function can be called using:
 
 ```
-`bricktools::check_brick(dir)
+bricktools::check_brick(dir)
 ```
 
 where dir is the path of the directory for the brick. The function will print out whether or not dir meets each of the requirements for a brick based on our typical format.

@@ -58,3 +58,28 @@ errors <- function(dir) {
         errors
     }
 }
+
+#' Check a brick, returns the proper error code
+#'
+#' @param dir of the brick repo
+#' @importFrom purrr map discard walk
+#' @importFrom stringr str_flatten
+#' @export
+check <- function(dir) {
+    if (valid(dir)) {
+		cat("All brick checks passed.\n")
+        if (interactive()) {
+            TRUE
+        } else {
+            quit(status = 0)
+        }
+    } else {
+        # print errors
+        errors(dir) |> map(~ { cat(paste0(.x,"\n"))})
+        if (interactive()) {
+            FALSE
+        } else {
+            quit(status = 1)
+        }
+    }
+}

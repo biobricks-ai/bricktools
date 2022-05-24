@@ -46,10 +46,15 @@ valid <- function(dir) {
 #'
 #' @param dir of the brick repo
 #' @return list of errors
-#' @importFrom purrr map keep
+#' @importFrom purrr map keep flatten
 #' @export
 errors <- function(dir) {
-    validate(dir) |>
+    errors <- validate(dir) |>
         purrr::keep(~ isFALSE(.x$valid)) |>
         purrr::map(~ .x$error_msg)
+    if (length(errors) == 0) {
+        NA
+    } else {
+        errors
+    }
 }

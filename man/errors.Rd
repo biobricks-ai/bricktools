@@ -4,10 +4,10 @@
 \alias{errors}
 \title{Return errors associated with a brick}
 \usage{
-errors(dir)
+errors(validate_result)
 }
 \arguments{
-\item{dir}{of the brick repo}
+\item{validate_result}{a list of validation results returned by validate}
 }
 \value{
 list of errors

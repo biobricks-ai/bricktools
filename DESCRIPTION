@@ -14,3 +14,4 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Remotes: biobricks-ai/biobricks-r

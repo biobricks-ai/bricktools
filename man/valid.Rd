@@ -4,10 +4,10 @@
 \alias{valid}
 \title{Check whether or not the brick is valid}
 \usage{
-valid(dir)
+valid(validate_result)
 }
 \arguments{
-\item{dir}{of the brick repo}
+\item{validate_result}{a list of validation results returned by validate}
 }
 \value{
 TRUE if the brick passes all tests and FALSE if it does not.

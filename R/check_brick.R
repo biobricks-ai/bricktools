@@ -2,13 +2,13 @@
 #' on brick
 #' @param brickname the name of the brick check
 #' @export
-#' @importFrom biobricks local_bblib install_brick brick_ls_remote
+#' @importFrom biobricks local_bblib brick_install brick_ls_remote
 #' @return list(valid = boolean, error_msg = string)
 brick_ls_works <- function(brickname) {
     tryCatch(
         {
             local_bblib()
-            install_brick(brickname)
+            brick_install(brickname)
             brick_ls_remote(brickname)
             return(list(valid = TRUE))
         },
